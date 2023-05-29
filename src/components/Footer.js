@@ -9,6 +9,20 @@ function Footer() {
   const [songUrl, setSongUrl] = useState('');
 
   useEffect(() => {
+    async function fetchData() {
+      const data = await getNowPlaying();
+      if (data.is_playing) {
+        setSong(data.item.name);
+        setSongUrl(data.item.external_urls.spotify);
+      } else {
+        setSong("Not Listening");
+      }
+    }
+
+    fetchData();
+  }, );
+
+  useEffect(() => {
     const interval = setInterval(() => {
       async function fetchData() {
         const data = await getNowPlaying();
