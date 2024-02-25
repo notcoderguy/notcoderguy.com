@@ -1,31 +1,30 @@
 import { Route, Routes } from "react-router-dom";
 
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Socials from "./Socials";
-import Projects from "./Projects";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 
-import ThankYou from "./ThankYou";
+import ThankYou from "./pages/ThankYou";
+import NotFound from "./pages/NotFound";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-black text-white font-gilroy selection:bg-indigo-500 scrollbar-hide selection:text-black">
+    <div className="flex min-h-screen flex-col bg-base-100 text-primary-content font-poppins selection:bg-primary scrollbar-hide selection:text-primary-content max-w-7xl mx-auto overflow-hidden">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/socials" element={<Socials />} />
-        <Route path="/projects" element={<Projects />} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
 
-        <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/thank-you" element={<ThankYou />} />
 
-        <Route path="*" element={<Home />} />
-      </Routes>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
       <Footer />
     </div>
   );
