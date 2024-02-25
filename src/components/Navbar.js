@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +9,10 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-black px-2 sm:px-4 py-2.5 rounded">
+    <nav className="mt-5 bg-base-200 px-2 sm:px-4 py-2.5 rounded-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto max-w-full">
-        <Link to="/" className="flex items-center">
-          <Logo />
+        <Link to="/" className="flex text-md items-center font-bold ml-3">
+          notcoderguy.
         </Link>
         <div className="flex md:hidden">
           <button
@@ -47,60 +46,42 @@ function Navbar() {
             isOpen ? 'block' : 'hidden'
           } md:flex md:items-center w-full md:w-auto`}
         >
-          <div className="flex flex-col absolute md:static md:flex-row md:ml-auto mt-3 md:mt-0">
+          <div className="flex flex-col font-extrabold absolute md:static md:flex-row md:ml-auto mt-3 md:mt-0">
             <Link
               to="/"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-4 md:mr-6 hover:underline hover:decoration-dashed hover:text-indigo-500"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
-              Home
+              home.
             </Link>
             <Link
               to="/about"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-4 md:mr-6 hover:underline hover:decoration-dashed hover:text-indigo-500"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-4 md:mr-6 hover:underline hover:decoration-dashed hover:text-indigo-500"
-              onClick={toggleMenu}
-            >
-              Contact
+              about.
             </Link>
             <Link
               to="/projects"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-4 md:mr-6 hover:underline hover:decoration-dashed hover:text-indigo-500"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
-              Projects
+              projects.
             </Link>
             <Link
-              to="/socials"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-4 md:mr-6 hover:underline hover:decoration-dashed hover:text-indigo-500"
+              to="/blog"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
-              Socials
+              blog.
             </Link>
-            <a
-              href="https://blog.notcoderguy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-4 md:mr-6 hover:underline hover:decoration-dashed hover:text-indigo-500"
+            <Link
+              to="/contact"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
-              Blog
-            </a>
-            <a
-              href="https://resume.notcoderguy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 font-medium text-sm py-2.5 mr-2 hover:underline hover:decoration-dashed hover:text-indigo-500"
-              onClick={toggleMenu}
-            >
-              Resume
-            </a>
+              contact.
+            </Link>
           </div>
         </div>
       </div>
