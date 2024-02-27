@@ -120,8 +120,8 @@ function Contact() {
           <a href="https://instagram.com/notcoderguy/" target="_blank" rel="noreferrer noopener" className="btn btn-ghost bg-base-200 rounded-full">
             <button className=" text-white normal-case text-xl">instagram.</button>
           </a>
-          <a href="https://wa.me/918501966796" target="_blank" rel="noreferrer noopener" className="btn btn-ghost bg-base-200 rounded-full">
-            <button className=" text-white normal-case text-xl">whatsapp.</button>
+          <a href="https://discordapp.com/users/501102080870580224" target="_blank" rel="noreferrer noopener" className="btn btn-ghost bg-base-200 rounded-full">
+            <button className=" text-white normal-case text-xl">discord.</button>
           </a>
           <a href="https://t.me/notcoderguy" target="_blank" rel="noreferrer noopener" className="btn btn-ghost bg-base-200 rounded-full">
             <button className=" text-white normal-case text-xl">telegram.</button>
