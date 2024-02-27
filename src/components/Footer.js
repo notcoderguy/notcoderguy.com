@@ -42,7 +42,7 @@ function Footer() {
 
   return (
     <div>
-      <footer className="fixed bottom-0 z-20 container flex flex-wrap items-center justify-between mx-auto max-w-7xl mb-5 bg-base-200 px-2 sm:px-4 py-2.5 rounded-full">
+      <footer className="mt-2 container flex flex-wrap items-center justify-between mx-auto max-w-7xl mb-5 bg-base-200 px-2 sm:px-4 py-2.5 rounded-full">
         <span className="text-md text-gray-400 ml-3">&copy; {currentYear} <Link to="/"
           className="font-bold hover:text-white transition duration-500 ease-in-out">notcoderguy</Link>.
         </span>

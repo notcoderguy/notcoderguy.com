@@ -7,9 +7,9 @@ function Projects() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center mt-2 mb-2 w-full rounded-3xl transform transition duration-500 ease-in-out">
+    <div className="flex flex-col items-center mt-2 w-full rounded-3xl transform transition duration-500 ease-in-out">
       <div className="">
-        <div className="grid grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-2 gap-2">
           {projectsData.map((project) => (
             <div key={project.name} className="bg-base-200 rounded-3xl transform transition duration-500 ease-in-out">
               <div className="flex flex-col items-left p-8">
