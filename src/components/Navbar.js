@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
+  const location = useLocation();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const isActive = (pathname) => location.pathname === pathname;
 
   return (
     <nav className="mt-5 bg-base-200 px-2 sm:px-4 py-2.5 rounded-full">
@@ -47,37 +51,30 @@ function Navbar() {
           } md:flex md:items-center w-full md:w-auto`}
         >
           <div className="flex flex-col font-extrabold absolute md:static md:flex-row md:ml-auto mt-3 md:mt-0">
-            <Link
+          <Link
               to="/"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
+              className={`text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out ${isActive('/') ? 'text-white' : 'text-gray-400'}`}
               onClick={toggleMenu}
             >
               home.
             </Link>
             <Link
               to="/about"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
+              className={`text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out ${isActive('/about') ? 'text-white' : 'text-gray-400'}`}
               onClick={toggleMenu}
             >
               about.
             </Link>
             <Link
               to="/projects"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
+              className={`text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out ${isActive('/projects') ? 'text-white' : 'text-gray-400'}`}
               onClick={toggleMenu}
             >
               projects.
             </Link>
-            {/* <Link
-              to="/blog"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
-              onClick={toggleMenu}
-            >
-              blog.
-            </Link> */}
             <Link
               to="/contact"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
+              className={`text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out ${isActive('/contact') ? 'text-white' : 'text-gray-400'}`}
               onClick={toggleMenu}
             >
               contact.
