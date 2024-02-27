@@ -1,10 +1,28 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import projectsData from '../assets/projects.json'
 
 function Projects() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Projects | NotCoderGuy";
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) { 
+        navigate('/contact');
+      } else if (event.deltaY < 0) {
+        navigate('/about');
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [navigate]);
 
   return (
     <div className="flex flex-col items-center mt-2 w-full rounded-3xl transform transition duration-500 ease-in-out">

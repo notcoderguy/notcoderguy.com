@@ -1,10 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 function Contact() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Contact | NotCoderGuy";
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) { 
+        navigate('/');
+      } else if (event.deltaY < 0) {
+        navigate('/projects');
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [navigate]);
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();

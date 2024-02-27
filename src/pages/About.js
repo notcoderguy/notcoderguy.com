@@ -1,11 +1,28 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import SkillsMarquee from '../components/SkillsMarquee';
 
 function About() {
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "About | NotCoderGuy";
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) { 
+        navigate('/projects');
+      } else if (event.deltaY < 0) {
+        navigate('/');
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [navigate]);
 
   return (
     <div className="">

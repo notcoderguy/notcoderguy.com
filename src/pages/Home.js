@@ -1,11 +1,28 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import dp from './../assets/pfp.jpeg'
 
 function Home() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Home | NotCoderGuy";
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) { 
+        navigate('/about');
+      } else if (event.deltaY < 0) {
+        navigate('/contact');
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [navigate]);
 
   return (
     <div>
