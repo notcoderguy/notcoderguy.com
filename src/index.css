@@ -22,3 +22,18 @@
      scrollbar-width: none;
      /* Firefox */
  }
+
+ @keyframes slideInFromTop {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+      }
+    
+      to {
+        transform: translate3d(0, 0, 0);
+      }
+ }
+
+ .page-transition-enter {
+     animation: slideInFromTop 0.5s forwards;
+ }
