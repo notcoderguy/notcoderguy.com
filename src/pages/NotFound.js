@@ -1,9 +1,26 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NotFound = () => {
+    const navigate = useNavigate();
+
     useEffect(() => {
         document.title = "Not Found | NotCoderGuy";
     }, []);
+
+    useEffect(() => {
+        const handleWheel = (event) => {
+          if (event.deltaY > 0) { 
+            navigate('/');
+          } else if (event.deltaY < 0) {
+            navigate('/');
+          }
+        };
+    
+        window.addEventListener('wheel', handleWheel, { passive: false });
+    
+        return () => window.removeEventListener('wheel', handleWheel);
+      }, [navigate]);
 
     return (
         <div className="grid grid-cols-1 gap-2 mt-2 mb-2">

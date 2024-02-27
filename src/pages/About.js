@@ -1,11 +1,28 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import SkillsMarquee from '../components/SkillsMarquee';
 
 function About() {
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "About | NotCoderGuy";
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) { 
+        navigate('/projects');
+      } else if (event.deltaY < 0) {
+        navigate('/');
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [navigate]);
 
   return (
     <div className="">
@@ -33,7 +50,7 @@ function About() {
         </div>
 
         <div className="bg-blue-700 hover:bg-blue-500 text-white rounded-3xl col-span-2">
-          <a href="https://notcoderguy.com/resume.pdf" target="_blank" rel="noreferrer noopener">
+          <a href={process.env.PUBLIC_URL + 'resume/Vasu_Grover.pdf'} target="_blank" rel="noreferrer noopener">
             <div className="flex flex-col items-center p-8">
               <span className="text-4xl font-semibold p-0.5">
                 Download Resume

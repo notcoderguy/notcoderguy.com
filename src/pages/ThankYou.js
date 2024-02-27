@@ -1,10 +1,26 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function ThankYou() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Thank You | NotCoderGuy";
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) { 
+        navigate('/contact');
+      } else if (event.deltaY < 0) {
+        navigate('/contact');
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [navigate]);
 
   return (
     <div className="grid grid-cols-1 gap-2 mt-2 mb-2">
