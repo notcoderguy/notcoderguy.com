@@ -49,35 +49,35 @@ function Navbar() {
           <div className="flex flex-col font-extrabold absolute md:static md:flex-row md:ml-auto mt-3 md:mt-0">
             <Link
               to="/"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
               home.
             </Link>
             <Link
               to="/about"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
               about.
             </Link>
             <Link
               to="/projects"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
               projects.
             </Link>
-            <Link
+            {/* <Link
               to="/blog"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
               blog.
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
-              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-primary-content transition duration-500 ease-in-out"
+              className="text-gray-400 text-md py-2.5 mr-4 md:mr-7 hover:text-white transition duration-500 ease-in-out"
               onClick={toggleMenu}
             >
               contact.
