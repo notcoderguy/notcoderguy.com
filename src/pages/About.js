@@ -33,7 +33,7 @@ function About() {
         </div>
 
         <div className="bg-blue-700 hover:bg-blue-500 text-white rounded-3xl col-span-2">
-          <a href="https://notcoderguy.com/resume.pdf" target="_blank" rel="noreferrer noopener">
+          <a href={process.env.PUBLIC_URL + 'resume/Vasu_Grover.pdf'} target="_blank" rel="noreferrer noopener">
             <div className="flex flex-col items-center p-8">
               <span className="text-4xl font-semibold p-0.5">
                 Download Resume
