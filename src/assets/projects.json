@@ -1,0 +1,43 @@
+[
+    {
+      "name": "GeoIP",
+      "description": "Dynamically tailor user experiences with precise IP-based geolocation.",
+      "image": "/projects/geoip.png",
+      "website": "https://geoip.in",
+      "github": "https://github.com/notcoderguy/geoip"
+    },
+    {
+      "name": "GeoProxy",
+      "description": "HTTP, SOCKS4, SOCKS5 proxies at your fingertips.",
+      "image": "/projects/geoproxy.png",
+      "website": "https://geoproxy.in",
+      "github": "https://github.com/notcoderguy/geoproxy-db"
+    },
+    {
+      "name": "SpotifyX",
+      "description": "A real-time Spotify dashboard with API access.",
+      "image": "/projects/geoproxy.png",
+      "website": "https://geoproxy.in",
+      "github": "https://github.com/notcoderguy/geoproxy-db"
+    },
+    {
+      "name": "Evader",
+      "description": "A 2D Unity game to showcase the understanding of basics.",
+      "image": "/projects/evader.png",
+      "github": "https://github.com/notcoderguy/evader"
+    },
+    {
+      "name": "Cyberbullying Detection",
+      "description": "A cyberbullying detection API with machine learning.", 
+      "image": "/projects/cbd.png",
+      "github": "https://github.com/notcoderguy/cyberbullying-detection"
+    },
+    {
+      "name": "web-taste",
+      "description": "A generic vite powered web app template with tailwindcss.",
+      "image": "/projects/web-taste.png",
+      "website": "https://web-taste.notcoderguy.com",
+      "github": "https://github.com/notcoderguy/web-taste"
+    }
+  ]
+  
