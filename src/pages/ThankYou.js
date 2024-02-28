@@ -1,31 +1,41 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function ThankYou() {
   const navigate = useNavigate();
+  const [lastNavigationTime, setLastNavigationTime] = useState(0);
+  const navigationCooldown = 1000; 
 
   useEffect(() => {
     document.title = "Thank You | NotCoderGuy";
   }, []);
 
   useEffect(() => {
+    let scrollIntensity = 0;
     const handleWheel = (event) => {
-      if (event.deltaY > 0) { 
-        navigate('/contact');
-      } else if (event.deltaY < 0) {
-        navigate('/contact');
+      const now = Date.now();
+      if (now - lastNavigationTime < navigationCooldown) return;
+      scrollIntensity += Math.abs(event.deltaY);
+      if (scrollIntensity > 300) {
+        if (event.deltaY > 0) {
+          navigate('/contact');
+        } else {
+          navigate('/contact');
+        }
+        setLastNavigationTime(now);
+        scrollIntensity = 0; 
       }
     };
-
     window.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [navigate]);
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, [navigate, lastNavigationTime]);
 
   return (
-    <div className="grid grid-cols-1 gap-2 mt-2 mb-2">
-      <div className="bg-base-200 rounded-3xl transform transition duration-500 ease-in-out">
-        <div className="flex flex-col items-center p-8 my-44 mx-64">
+    <div className="grid grid-cols-1 gap-2 mt-2">
+      <div className="bg-base-200 rounded-3xl">
+        <div className="flex flex-col items-center p-8 my-32 md:my-44 lg:mx-64">
           <div className="items-start justify-start pb-5">
             <p className="text-2xl font-semibold text-white">Thanks For Contacting</p>
           </div>
