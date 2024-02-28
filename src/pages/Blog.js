@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Blog() {
+    const navigate = useNavigate();
+
+    const [lastNavigationTime, setLastNavigationTime] = useState(0);
+  const navigationCooldown = 1000; 
     const [blogposts, setBlogposts] = useState([]);
 
     useEffect(() => {
@@ -22,6 +27,35 @@ function Blog() {
         };
         fetchBlogPosts();
     }, []);
+
+    useEffect(() => {
+        let scrollIntensity = 0;
+    
+        const handleWheel = (event) => {
+          const now = Date.now();
+          if (now - lastNavigationTime < navigationCooldown) return;
+    
+          scrollIntensity += Math.abs(event.deltaY);
+    
+          // Check if scroll intensity exceeds a certain threshold before navigating
+          if (scrollIntensity > 300) { // Threshold value can be adjusted
+            if (event.deltaY > 0) {
+              navigate('/projects');
+            } else {
+              navigate('/');
+            }
+            setLastNavigationTime(now);
+            scrollIntensity = 0; // Reset scroll intensity after navigation
+          }
+        };
+    
+        window.addEventListener('wheel', handleWheel, { passive: false });
+    
+        return () => {
+          window.removeEventListener('wheel', handleWheel);
+        };
+      }, [navigate, lastNavigationTime]);
+    
     return (
         <div>
             <div className="grid grid-cols-1 gap-2 mt-2 mb-2">

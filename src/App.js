@@ -19,16 +19,14 @@ function App() {
   useEffect(() => {
     const page = document.querySelector('.page');
     page.classList.add('page-transition-enter');
-
-    // Optional: Remove the class after the animation completes
-    const animationDuration = 500; // match the CSS animation duration
+    const animationDuration = 500;
     setTimeout(() => {
       page.classList.remove('page-transition-enter');
     }, animationDuration);
   }, [location.pathname]);
 
   return (
-    <div className="page flex min-h-screen max-h-screen flex-col bg-base-100 text-primary-content font-poppins selection:bg-primary scrollbar-hide selection:text-primary-content max-w-7xl mx-auto overflow-hidden">
+    <div className="page bg-base-100 text-primary-content font-poppins selection:bg-primary scrollbar-hide selection:text-primary-content flex flex-col max-w-7xl mx-2 mb-2 xl:mb-0 2xl:mb-0 xl:mx-auto 2xl:mx-auto 2xl:min-h-screen max-h-fit 2xl:max-h-screen overflow-hidden">
       <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
