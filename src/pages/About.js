@@ -41,7 +41,7 @@ function About() {
       <div className="grid md:grid-cols-5 gap-2 mt-2">
 
         <motion.div
-          initial={{ y: 40, opacity: 0 }}
+          initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="bg-base-200 text-white rounded-3xl md:col-span-2">
@@ -54,7 +54,7 @@ function About() {
         </motion.div>
 
         <motion.div
-          initial={{ y: 40, opacity: 0 }}
+          initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="bg-base-200 text-white rounded-3xl md:col-span-3">
@@ -79,7 +79,7 @@ function About() {
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0, delay: 0.5 }}
           className="bg-blue-700 hover:bg-blue-500 text-white rounded-3xl md:col-span-2 transition duration-500 ease-in-out">
           <a href={process.env.PUBLIC_URL + 'resume/Vasu_Grover.pdf'} target="_blank" rel="noreferrer noopener">
             <div className="flex flex-col items-center p-4 md:p-8">

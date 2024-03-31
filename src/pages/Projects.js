@@ -40,9 +40,9 @@ function Projects() {
       <div className="grid lg:grid-cols-2 gap-2 w-full">
         {projectsData.map((project) => (
           <motion.div
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ x: project.id % 2 === 0 ? 100 : -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             key={project.name} className="bg-base-200 rounded-3xl">
             <div className="flex flex-col items-left p-8">
               <div className="items-start justify-start pb-5">

@@ -103,7 +103,7 @@ function Contact() {
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="bg-base-200 rounded-3xl lg:col-span-3">
             <div className="flex flex-col items-center p-8 my-14">
               <div className="items-start justify-start pb-5">
@@ -151,7 +151,7 @@ function Contact() {
           <motion.a
             initial={{ x: -1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0, delay: 0.5 }}
             className="btn btn-ghost bg-base-200 rounded-full transition duration-500 ease-in-out"
             href="https://linkedin.com/in/notcoderguy" target="_blank" rel="noreferrer noopener">
             <button className="text-white normal-case text-xl">linkedin.</button>
@@ -159,7 +159,7 @@ function Contact() {
           <motion.a
             initial={{ x: -1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0, delay: 0.5 }}
             className="btn btn-ghost bg-base-200 rounded-full transition duration-500 ease-in-out"
             href="https://github.com/notcoderguy" target="_blank" rel="noreferrer noopener">
             <button className=" text-white normal-case text-xl">github.</button>
@@ -167,7 +167,7 @@ function Contact() {
           <motion.a
             initial={{ x: -1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0, delay: 0.5 }}
             className="btn btn-ghost bg-base-200 rounded-full transition duration-500 ease-in-out"
             href="https://twitter.com/notcoderguy/" target="_blank" rel="noreferrer noopener">
             <button className=" text-white normal-case text-xl">twitter.</button>
@@ -175,7 +175,7 @@ function Contact() {
           <motion.a
             initial={{ x: 1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0, delay: 0.5 }}
             className="btn btn-ghost bg-base-200 rounded-full transition duration-500 ease-in-out"
             href="https://instagram.com/notcoderguy/" target="_blank" rel="noreferrer noopener">
             <button className=" text-white normal-case text-xl">instagram.</button>
@@ -183,7 +183,7 @@ function Contact() {
           <motion.a
             initial={{ x: 1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0, delay: 0.5 }}
             className="btn btn-ghost bg-base-200 rounded-full transition duration-500 ease-in-out"
             href="https://discordapp.com/users/501102080870580224" target="_blank" rel="noreferrer noopener">
             <button className=" text-white normal-case text-xl">discord.</button>
@@ -191,7 +191,7 @@ function Contact() {
           <motion.a
             initial={{ x: 1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0, delay: 0.5 }}
             className="btn btn-ghost bg-base-200 rounded-full transition duration-500 ease-in-out"
             href="https://t.me/notcoderguy" target="_blank" rel="noreferrer noopener">
             <button className=" text-white normal-case text-xl">telegram.</button>
